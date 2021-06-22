@@ -18,7 +18,7 @@ namespace JobApp
 
         public void Execute(Worker w)
         {
-            w.GoToLocation(Location);
+            w.GoToLocation(this.Location);
             w.DoJob(this._jobData);
             PayWorker(w.Account.Number);
         }
@@ -27,5 +27,19 @@ namespace JobApp
         {
             Console.WriteLine($"Millions transferred to {number}");
         }
+        /*
+        public virtual void Execute(Worker w)
+        {
+            //Megoldás 2. Null-check
+            //if (Location != null)
+            //{
+            //    w.GoToLocation(this.Location);
+            //}
+            w.GoToLocation(this.Location);
+            w.DoJob(this._jobData);
+            PayWorker(w.Account.Number);
+        }
+        */
+
     }
 }
